@@ -1,62 +1,27 @@
 <div class="container pt-4">
-  <h1 class="text-center">Images GPT</h1>
-
+  <h1 class="text-center">Images Jham GPT</h1>
   <div class="row pt-3">
+    @for (image of listImages; track $index) {
     <div class="col-3">
       <div class="card">
         <img class="card-img-top img-card" alt="..."
-          src="https://images.pexels.com/photos/13822368/pexels-photo-13822368.jpeg" />
+          [src]="'images/'+image.name" />
         <div class="card-body">
-          <h5 class="card-title">nombre-foto.jpg</h5>
-          <p class="card-text mb-0 cursor-pointer" (click)="copyValue()">Foto de ballena con atardecer de fondo</p>
-          <p class="card-text mt-2 cursor-pointer" (click)="copyValue()">50, palabras, claves, water, sunset, human, dog, cat, etc...
-          </p>
+          <h5 class="card-title text-center">{{image.name}}</h5>
+          <div class="item-text-copy cursor-pointer" (click)="copyValue(image.description)">
+            <p class="card-text mb-0">{{image.description}}</p>
+            <img class="icon-copy-paste" src="icons/copy-paste-icon.png" />
+          </div>
+          <div class="item-text-copy mt-3 cursor-pointer" (click)="copyValue(image.keywords)">
+            <p class="card-text">{{image.keywords}}</p>
+            <img class="icon-copy-paste" src="icons/copy-paste-icon.png" />
+          </div>
+          <button class="btn btn-danger" (click)="soldPhoto(image._id)">Foto vendida</button>
         </div>
       </div>
     </div>
-
-    <div class="col-3">
-      <div class="card">
-        <img class="card-img-top img-card" alt="..."
-          src="https://images.pexels.com/photos/18162796/pexels-photo-18162796/free-photo-of-grupo-de-flamenco.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-        <div class="card-body">
-          <h5 class="card-title cursor-pointer">nombre-foto.jpg</h5>
-          <p class="card-text mb-0" (click)="copyValue()">Foto de ballena con atardecer de fondo</p>
-          <p class="card-text mt-2" (click)="copyValue()">50, palabras, claves, water, sunset, human, dog, cat, etc...
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-3">
-      <div class="card">
-        <img class="card-img-top img-card" alt="..."
-          src="https://images.pexels.com/photos/1292470/pexels-photo-1292470.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-        <div class="card-body">
-          <h5 class="card-title cursor-pointer">nombre-foto.jpg</h5>
-          <p class="card-text mb-0" (click)="copyValue()">Foto de ballena con atardecer de fondo</p>
-          <p class="card-text mt-2" (click)="copyValue()">50, palabras, claves, water, sunset, human, dog, cat, etc...
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-3">
-      <div class="card">
-        <img class="card-img-top img-card" alt="..."
-          src="https://images.pexels.com/photos/18183049/pexels-photo-18183049/free-photo-of-mono-titi.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-        <div class="card-body">
-          <h5 class="card-title cursor-pointer">nombre-foto.jpg</h5>
-          <p class="card-text mb-0" (click)="copyValue()">Foto de ballena con atardecer de fondo</p>
-          <p class="card-text mt-2" (click)="copyValue()">50, palabras, claves, water, sunset, human, dog, cat, etc...
-          </p>
-        </div>
-      </div>
-    </div>
+    }
   </div>
-
-
-
 </div>
 
 

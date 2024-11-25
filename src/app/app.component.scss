@@ -1,8 +1,27 @@
 .img-card {
-    height: 300px;
-    object-fit: cover;
+  height: 250px;
+  object-fit: cover;
 }
 
 .cursor-pointer {
-    cursor: pointer;
+  cursor: pointer;
+}
+
+.item-text-copy {
+  display: flex;
+
+  &:hover{
+    font-weight: 500;
+  }
+}
+
+.icon-copy-paste {
+  width: 20px;
+  height: max-content;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.card-text{
+    line-height: 18px;
 }
