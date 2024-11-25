@@ -58,4 +58,8 @@ export class AppComponent implements OnInit {
     //   }
     // }
   }
+
+  copyValue(){
+    navigator.clipboard.writeText('foto de ballena con atardecer');
+  }
 }
